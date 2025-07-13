@@ -22,9 +22,10 @@ body {
 }
 
 #subtitle {
-    position: relative;
-    top: 50px;
-    left: 41%;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
     color: #FFF;
     font-family: Inter;
     font-weight: 800;
@@ -39,25 +40,30 @@ h1 {
     text-align: center;
     font-family: Inter;
     font-weight: 900;
-    position: relative;
+    position: absolute;
     font-size: 300%;
 }
 
 #title1 {
     color: #2C2C2C;
-    top: 10px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #title2 {
     color: #A51919;
-    bottom: 30px;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 button {
     transition: all 0.25s;
-    position: relative;
-    left: 44%;
-    bottom: 0px;
+    position: absolute;
+    bottom: 37%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 20px 40px;
     border: 0;
     border-radius: 32px;
@@ -76,43 +82,37 @@ button {
 }
 
 button:hover {
-    position: relative;
-    left: 44%;
-    bottom: 3px;
-    padding: 20px 40px;
-    border: 0;
-    border-radius: 32px;
+    bottom: 3%;
     background: #C63737;
     box-shadow: 0px 10px 10px 0px rgba(198, 55, 55, 0.25);
-    text-align: center;
-    font-family: Inter;
-    font-weight: 800;
     cursor: pointer;
 }
 
 #seat {
-    position: relative;
-    top: 70px;
-    left: 380px;
+    position: absolute;
+    bottom: 2.5%;
+    left: 50%; right: 50%;
+    transform: translateX(-50%);
     inline-size: 25%;
 }
 
 #light {
     transition: all 2s;
-    position: relative;
-    top: 70px;
-    right: 3px;
+    position: absolute;
+    bottom: 2.5%;
+    left: 50%; right: 50%;
+    transform: translateX(-50%);
     inline-size: 50%;
     opacity: 1;
 }
 
 #curtain {
-    position: relative;
+    position: absolute;
     bottom: 510px;
-    transform: translateX(-8px);
+    left: 0; top: 0;
     inline-size: 100%;
     pointer-events: none;
-    width: 1023px;
+    width: 100%;
 }
 
 a {
