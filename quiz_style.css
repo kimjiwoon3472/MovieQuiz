@@ -41,7 +41,8 @@ h1 {
 
 #subtitle {
     position: relative;
-    left: 41%;
+    left: 50%;
+    transform: translateX(-50%);
     top: 20px;
     color: #FFF;
     font-family: Inter;
@@ -113,7 +114,8 @@ button:hover {
 
 input {
     position: relative;
-    left: 37%;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 60px;
     padding: 10px;
     font-size: 15px;
@@ -153,8 +155,10 @@ input:focus {
 
 #poster {
     position: absolute;
-    bottom: 25%;
-    left: 65%;
+    top: 0;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
     width: 100px;
     height: 144px;
     border-radius: 3px;
