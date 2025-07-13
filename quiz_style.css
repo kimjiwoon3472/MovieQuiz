@@ -146,9 +146,23 @@ input:focus {
     transform: translateX(-50%);
 }
 
+#checkAnswer:hover {
+    position: absolute;
+    bottom: 30.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #end {
     position: absolute;
     bottom: 30%;
+    left: 50%;
+    transform: translateX(45%);
+}
+
+#end:hover {
+    position: absolute;
+    bottom: 30.5%;
     left: 50%;
     transform: translateX(45%);
 }
