@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 제목 맞추기</title>
+    <link rel="stylesheet" href="quiz_style.css">
+</head>
+<body onload="focus()">
+    <div id="quiz">
+        <p id="subtitle">MOVIEQUIZ</p>
+        <h1 id="title1">GUESS</h1>
+        <h1 id="title2">THE MOVIE</h1>
+        <p id="hint"></p>
+        <input id="answer" placeholder="영화 제목 입력" >
+        <div>
+            <span id="progress"></span>
+            <button id="checkAnswer" onclick="check()">정답확인</button>
+            <a href="index.html"><button id="end" style="display: none;">돌아가기 <span id="button-arrow">►</span></button></a>
+        </div>
+        <img id="poster" src="">
+        <div id="result"></div>
+    </div>
+    <img id="seat" src="img/좌석.svg">
+    <img id="light" src="img/조명.svg">
+    <img id="curtain" src="img/커튼(2).svg">
+    <p id="nametag">1304 김지운</p>
+
+    <script src="quiz_script.js"></script>
+</body>
+</html>
