@@ -109,7 +109,6 @@ button:hover {
     background: #C63737;
     box-shadow: 0px 10px 10px 0px rgba(198, 55, 55, 0.25);
     font-weight: 900;
-    padding: 15px 19px;
 }
 
 input {
@@ -146,12 +145,12 @@ input:focus {
     transform: translateX(-50%);
 }
 
-#checkAnswer:hover {
+/* #checkAnswer:hover {
     position: absolute;
     bottom: 30.5%;
     left: 50%;
     transform: translateX(-50%);
-}
+} */
 
 #end {
     position: absolute;
@@ -160,12 +159,12 @@ input:focus {
     transform: translateX(45%);
 }
 
-#end:hover {
+/* #end:hover {
     position: absolute;
     bottom: 30.5%;
     left: 50%;
     transform: translateX(45%);
-}
+} */
 
 #poster {
     position: absolute;
@@ -208,20 +207,14 @@ input:focus {
 }
 
 #result {
-    position: relative;
-    bottom: 185px;
+    opacity: 1;
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
 a {
     text-decoration: none;
-}
-
-#nametag {
-    position: relative;
-    left: 94%;
-    color: #FFF;
-    font-family: Inter;
-    font-weight: 300;
-    font-size: small;
 }

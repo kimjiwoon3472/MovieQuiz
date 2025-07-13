@@ -71,29 +71,44 @@ setInterval(() => {
     console.log(light.style.opacity);
 }, 2000)
 
+function hideResult() {
+    setTimeout(() => {
+        result.style.transition = 'all 2s';
+        result.style.opacity = '0';
+        setTimeout(() => {
+            result.style.transition = 'all 0s';
+            result.textContent = "";
+            result.style.opacity = '1';
+        }, 2000);
+    }, 1000);
+}
+
 function check() {
     const inputAnswer = document.getElementById("answer");
     const result = document.getElementById("result");
 
-    if (inputAnswer.value.replaceAll(" ", "") != "") {
-        img.src = `img/${correctAnswers[quizNumber]}.webp`;
-        if (correctAnswers[quizNumber].replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "") == inputAnswer.value.replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "")) {
-            result.style.color = "green";
-            result.innerHTML = `O 정답입니다!<br>정답 : ${correctAnswers[quizNumber]}`;
+    if (getComputedStyle(result).opacity === '1') {
+        if (inputAnswer.value.replaceAll(" ", "") != "") {
+            img.src = `img/${correctAnswers[quizNumber]}.webp`;
+            if (correctAnswers[quizNumber].replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "") == inputAnswer.value.replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "")) {
+                result.style.color = "green";
+                result.innerHTML = `O 정답입니다!<br>정답 : ${correctAnswers[quizNumber]}`;
+                hideResult();
+            }
+            else {
+                result.style.color = "red";
+                result.innerHTML = `X 오답입니다..<br>정답 : ${correctAnswers[quizNumber]}`;
+                hideResult();
+            }
+            answer.readOnly = true;
+            setTimeout(() => set(), 2000);
         }
         else {
-            result.style.color = "red";
-            result.innerHTML = `X 오답입니다..<br>정답 : ${correctAnswers[quizNumber]}`;
+            result.style.color = "black";
+            result.textContent = "정답을 입력해주세요";
+            hideResult();
         }
-        answer.readOnly = true;
-        setTimeout(() => set(), 2000);
     }
-    else {
-        result.style.color = "black";
-        result.textContent = "정답을 입력해주세요";
-    }
-
-    
 }
 
 function set() {
@@ -121,6 +136,7 @@ function set() {
         else {
             result.style.color = "black";
             result.textContent = "정답을 입력해주세요";
+            hideResult();
         }
     }
     else {
