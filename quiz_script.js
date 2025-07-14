@@ -54,6 +54,7 @@ const hints = {
 let done = [];
 
 let cnt = 0;
+let correct = 0;
 const hint = document.getElementById("hint");
 const progress = document.getElementById("progress");
 const img = document.getElementById("poster");
@@ -75,11 +76,11 @@ setInterval(() => {
 function hideResult() {
     resultOn = false;
     setTimeout(() => {
-        result.style.transition = 'all 2s';
+        result.style.transition = 'all 1s';
         result.style.opacity = '0';
         setTimeout(() => {
             result.style.transition = 'all 0s';
-            result.textContent = "";
+            if (cnt < 9) result.textContent = "";
             result.style.opacity = '1';
             resultOn = true;
         }, 2000);
@@ -96,6 +97,7 @@ function check() {
             if (correctAnswers[quizNumber].replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "") == inputAnswer.value.replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "")) {
                 result.style.color = "green";
                 result.innerHTML = `O 정답입니다!<br>정답 : ${correctAnswers[quizNumber]}`;
+                correct++;
                 hideResult();
             }
             else {
@@ -145,6 +147,10 @@ function set() {
     else {
         end.style.display = "inline";
         answer.readOnly = true;
+        result.style.transition = "all 0s";
+        result.style.opacity = '1';
+        result.style.color = "black";
+        result.textContent = `10개 중에 ${correct}개 맞히셨습니다.`;
     }
 }
 

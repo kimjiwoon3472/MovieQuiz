@@ -128,12 +128,3 @@ button:hover {
 a {
     text-decoration: none;
 }
-
-#nametag {
-    position: relative;
-    left: 94%;
-    color: #FFF;
-    font-family: Inter;
-    font-weight: 300;
-    font-size: small;
-}
