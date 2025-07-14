@@ -59,6 +59,7 @@ const progress = document.getElementById("progress");
 const img = document.getElementById("poster");
 const light = document.getElementById("light");
 let visible = true;
+let resultOn = true;
 let quizNumber = Math.floor(Math.random() * correctAnswers.length);
 hint.textContent = hints[quizNumber];
 progress.textContent = `${cnt + 1}/10`;
@@ -72,6 +73,7 @@ setInterval(() => {
 }, 2000)
 
 function hideResult() {
+    resultOn = false;
     setTimeout(() => {
         result.style.transition = 'all 2s';
         result.style.opacity = '0';
@@ -79,6 +81,7 @@ function hideResult() {
             result.style.transition = 'all 0s';
             result.textContent = "";
             result.style.opacity = '1';
+            resultOn = true;
         }, 2000);
     }, 1000);
 }
@@ -87,7 +90,7 @@ function check() {
     const inputAnswer = document.getElementById("answer");
     const result = document.getElementById("result");
 
-    if (getComputedStyle(result).opacity === '1') {
+    if (resultOn) {
         if (inputAnswer.value.replaceAll(" ", "") != "") {
             img.src = `img/${correctAnswers[quizNumber]}.webp`;
             if (correctAnswers[quizNumber].replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "") == inputAnswer.value.replaceAll(" ", "").replaceAll("-", "").replaceAll(".", "")) {
